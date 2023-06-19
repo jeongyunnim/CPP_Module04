@@ -6,11 +6,15 @@ CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 INCS		=	./Dog.hpp\
 				./Cat.hpp\
 				./Animal.hpp\
+				./WrongCat.hpp\
+				./WrongAnimal.hpp\
 
 SRCS		=	./main.cpp\
 				./Dog.cpp\
 				./Cat.cpp\
 				./Animal.cpp\
+				./WrongCat.cpp\
+				./WrongAnimal.cpp\
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 
