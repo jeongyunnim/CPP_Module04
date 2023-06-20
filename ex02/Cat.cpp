@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 
 Cat::Cat(void)
-	:	Animal()
+	:	AAnimal()
 	,	brain(NULL)
 {
 	_type = "cat";

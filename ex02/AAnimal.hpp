@@ -6,6 +6,7 @@ class AAnimal
 {
 public:
 
+	AAnimal(void);
 	virtual ~AAnimal(void);
 
 	virtual void	makeSound(void) const = 0;

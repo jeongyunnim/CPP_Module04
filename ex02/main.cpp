@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -7,13 +7,15 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog(); // 부모 개체 생성은 명시적으로 필요한가?
+	const AAnimal* i = new Cat();
+
+	std::cout << j->getType() << std::endl;
 
 	delete j;//should not create a leak
 	delete i;
 
-	Animal	*zoo[100];
+	AAnimal	*zoo[100];
 
 	for (int index = 0; index < 100; index++)
 	{

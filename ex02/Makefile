@@ -1,11 +1,11 @@
-NAME 		=	ex01
+NAME 		=	ex02
 
 CXX 		=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 INCS		=	./Dog.hpp\
 				./Cat.hpp\
-				./Animal.hpp\
+				./AAnimal.hpp\
 				./WrongCat.hpp\
 				./WrongAnimal.hpp\
 				./Brain.hpp\
@@ -13,7 +13,7 @@ INCS		=	./Dog.hpp\
 SRCS		=	./main.cpp\
 				./Dog.cpp\
 				./Cat.cpp\
-				./Animal.cpp\
+				./AAnimal.cpp\
 				./WrongCat.cpp\
 				./WrongAnimal.cpp\
 				./Brain.cpp\

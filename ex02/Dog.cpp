@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 
 Dog::Dog(void)
-	:	Animal()
+	:	AAnimal()
 	,	brain(NULL)
 {
 	_type = "dog";
