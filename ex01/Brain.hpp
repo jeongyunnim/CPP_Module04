@@ -12,9 +12,9 @@ public:
 	Brain&	operator=(const Brain& rhs);
 	Brain(const Brain& other);
 	
-	void	setIdeas(std::string idea);
+	void	printIdeasAddress(void);
 
-protected:
+private:
 
 	std::string	ideas[100];
 

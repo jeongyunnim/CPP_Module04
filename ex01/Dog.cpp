@@ -2,6 +2,7 @@
 
 Dog::Dog(void)
 	:	Animal()
+	,	brain(NULL)
 {
 	_type = "dog";
 	brain = new Brain();
@@ -24,12 +25,16 @@ Dog& Dog::operator=(const Dog& rhs)
 Dog::Dog(const Dog& other)
 {
 	_type = other._type;
-	brain = new Brain();
-	brain = other.brain;
+	brain = new Brain(*(other.brain));
 	std::cout << "Copy Constructor called. Dog generated." << std::endl;
 }
 
 void	Dog::makeSound(void) const
 {
 	std::cout << "Bowwow" << std::endl;
+}
+
+void	Dog::whereIsBrain(void) const
+{
+	brain->printIdeasAddress();
 }

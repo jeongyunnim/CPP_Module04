@@ -13,6 +13,7 @@ public:
     Dog(const Dog& other);
 
 	void makeSound(void) const;
+    void whereIsBrain(void) const;
 
 private:
 

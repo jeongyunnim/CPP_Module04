@@ -13,6 +13,7 @@ public:
 	Cat(const Cat& other);
 
 	void makeSound(void) const;
+    void whereIsBrain(void) const;
 
 private:
     Brain   *brain;

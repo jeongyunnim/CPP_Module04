@@ -25,10 +25,7 @@ Brain::Brain(const Brain& other)
 	*this = other;
 }
 
-void	Brain::setIdeas(std::string idea)
+void	Brain::printIdeasAddress(void)
 {
-	for (int i = 0; i < 100; i++)
-	{
-		ideas[i] = idea;
-	}
+	std::cout << "Address: " << &ideas << std::endl;
 }
