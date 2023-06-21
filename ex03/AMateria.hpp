@@ -4,21 +4,21 @@
 
 class AMateria
 {
-	public:
+public:
 
-		const std::string& getType() const;
+	const std::string& getType() const;
 
-		AMateria(void);
-		~AMateria(void);
-		virtual AMateria&	operator=(const AMateria& rhs);
-		AMateria(const AMateria& rhs);
+	AMateria(void);
+	~AMateria(void);
+	virtual AMateria&	operator=(const AMateria& rhs);
+	AMateria(const AMateria& rhs);
 
-		AMateria(const std::string& type);
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+	AMateria(const std::string& type);
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
 
-	protected:
+protected:
 
-		std::string	_type;
+	std::string	_type;
 
 };

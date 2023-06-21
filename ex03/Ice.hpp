@@ -9,7 +9,7 @@ public:
 	Ice& operator=(const Ice& rhs);
 	Ice(const Ice& rhs);
 
-	AMateria*	clone(void);
+	AMateria*	clone(void) const;
 	void	use(ICharacter& target);
 
 };
