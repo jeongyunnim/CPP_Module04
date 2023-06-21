@@ -108,8 +108,8 @@ class AMateria
 
 - void use(ICharacter& Character);
 	: 이 멤버 함수는 아래의 메세지를 표출한다.
-	• Ice: "* shoots an ice bolt at <name> *"
-	• Cure: "* heals <name>’s wounds *"
+	- Ice: * shoots an ice bolt at <name> *
+	- Cure: * heals <name>’s wounds *
 	<name>은 파라미터로 전달받은 Character의 변수이다. 꺽쇠를 프린트 하지 마라.
 
 ! Materia를 다른 Materia에 할당하는 동안 유형을 복사하는 것은 의미가 없다.

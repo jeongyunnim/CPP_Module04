@@ -7,10 +7,11 @@
 
 int main()
 {
-	const AAnimal* j = new Dog(); // 부모 개체 생성은 명시적으로 필요한가?
+	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
 
 	std::cout << j->getType() << std::endl;
+	std::cout << i->getType() << std::endl;
 
 	delete j;//should not create a leak
 	delete i;
