@@ -1,9 +1,12 @@
 #include "Character.hpp"
 
 Character::Character(std::string name)
-    :   inventory{NULL, NULL, NULL, NULL}
-	,	_name(name)
+	:	_name(name)
 {
+	for(int i = 0; i < 4; i++)
+	{
+		inventory[i] = NULL;
+	}
 }
 
 Character::~Character(void)
@@ -36,6 +39,7 @@ Character& Character::operator=(const Character& rhs)
 		else
 			break ;
 	}
+	return (*this);
 }
 
 Character::Character(const Character& other)
@@ -60,14 +64,10 @@ void	Character::equip(AMateria* m)
 			break ;
 		}
 	}
-	if (inventory[i] == m)
-		std::cout << _name << " equip the materia" << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
-	AMateria *temp;
-
 	if (inventory[idx] != NULL)
 	{
 		inventory[idx] = NULL;

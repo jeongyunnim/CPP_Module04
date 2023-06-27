@@ -32,5 +32,5 @@ AMateria::AMateria(const std::string& type)
 
 void AMateria::use(ICharacter& target)
 {
-		std::cout << "* Invalid type *" << std::endl;
+		std::cout << "* " << target.getName() << " Invalid type *" << std::endl;
 }

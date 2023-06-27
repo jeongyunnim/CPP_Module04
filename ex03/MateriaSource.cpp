@@ -1,8 +1,12 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void)
-	:	sources{NULL, NULL, NULL, NULL}
 {
+	for(int i = 0; i < 4; i++)
+	{
+		sources[i] = NULL;
+	}
+
 }
 
 MateriaSource::~MateriaSource(void)
@@ -11,7 +15,16 @@ MateriaSource::~MateriaSource(void)
 	{
 		if (sources[i] != NULL)
 		{
-			delete sources[i];
+			for (int j = i + 1; j < 4; j++)
+			{
+				if (sources[i] == sources[j])
+				{
+					sources[i] = NULL;
+					break ;
+				}
+			}
+			if (sources[i] != NULL)
+				delete sources[i];
 			sources[i] = NULL;
 		}
 		else
@@ -25,19 +38,29 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& rhs)
 	{
 		if (sources[i] != NULL)
 		{
-			delete sources[i];
+			for (int j = i + 1; j < 4; j++)
+			{
+				if (sources[i] == sources[j])
+				{
+					sources[i] = NULL;
+					break ;
+				}
+			}
+			if (sources[i] != NULL)
+				delete sources[i];
 			sources[i] = NULL;
 		}
 		else
 			break ;
 	}
-    for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (rhs.sources[i] != NULL)
 			sources[i] = rhs.sources[i]->clone();
 		else
 			break ;
 	}
+	return (*this);
 }
 
 MateriaSource::MateriaSource(const MateriaSource& rhs)
@@ -48,10 +71,26 @@ MateriaSource::MateriaSource(const MateriaSource& rhs)
 
 void	MateriaSource::learnMateria(AMateria* materia)
 {
-
+	for (int i = 0; i < 4; i++)
+	{
+		if (sources[i] == NULL)
+		{
+			sources[i] = materia->clone();
+			return ;
+		}
+	}
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)
 {
-	
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << sources[i]->getType() << std::endl;
+		if (sources[i]->getType() == type)
+		{
+			std::cout << type << " successfully created" << std::endl;
+			return (sources[i]->clone());
+		}
+	}
+	return (NULL);
 }

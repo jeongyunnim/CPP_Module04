@@ -12,6 +12,7 @@ Ice::~Ice(void)
 Ice& Ice::operator=(const Ice& rhs)
 {
 	_type = rhs._type;
+	return (*this);
 }
 
 Ice::Ice(const Ice& rhs)

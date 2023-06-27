@@ -12,6 +12,7 @@ Cure::~Cure(void)
 Cure& Cure::operator=(const Cure& rhs)
 {
 	_type = rhs._type;
+	return (*this);
 }
 
 Cure::Cure(const Cure& rhs)
