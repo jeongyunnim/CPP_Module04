@@ -1,6 +1,7 @@
 #pragma once
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
+#include "Floor.hpp"
 
 class Character : public ICharacter
 {
@@ -22,5 +23,6 @@ private:
 
 	AMateria	*inventory[4];
 	std::string	_name;
-
+	Floor		floor;
+	
 };

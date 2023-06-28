@@ -11,6 +11,7 @@ Character::Character(std::string name)
 
 Character::~Character(void)
 {
+	floor.deleteAllNode();
     for (int i = 0; i < 4; i++)
 	{
 		if (inventory[i] != NULL)
@@ -61,15 +62,17 @@ void	Character::equip(AMateria* m)
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
-			break ;
+			return ;
 		}
 	}
+	floor.addNode(m);
 }
 
 void	Character::unequip(int idx)
 {
 	if (inventory[idx] != NULL)
 	{
+		floor.addNode(inventory[idx]);
 		inventory[idx] = NULL;
 		std::cout << _name << " unequip the materia" << std::endl;
 	}

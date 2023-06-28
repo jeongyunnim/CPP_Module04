@@ -11,6 +11,7 @@ MateriaSource::MateriaSource(void)
 
 MateriaSource::~MateriaSource(void)
 {
+	floor.deleteAllNode();
     for (int i = 0; i < 4; i++)
 	{
 		if (sources[i] != NULL)
@@ -75,10 +76,11 @@ void	MateriaSource::learnMateria(AMateria* materia)
 	{
 		if (sources[i] == NULL)
 		{
-			sources[i] = materia->clone();
+			sources[i] = materia;
 			return ;
 		}
 	}
+	floor.addNode(materia);
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)

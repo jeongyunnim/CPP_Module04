@@ -1,7 +1,7 @@
 NAME 		=	ex03
 
 CXX 		=	c++
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 INCS		=	./AMateria.hpp\
 				./Character.hpp\
@@ -10,6 +10,7 @@ INCS		=	./AMateria.hpp\
 				./ICharacter.hpp\
 				./IMateriaSource.hpp\
 				./MateriaSource.hpp\
+				./Floor.hpp\
 
 SRCS		=	./main.cpp\
 				./AMateria.cpp\
@@ -17,6 +18,7 @@ SRCS		=	./main.cpp\
 				./Cure.cpp\
 				./Ice.cpp\
 				./MateriaSource.cpp\
+				./Floor.cpp\
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 

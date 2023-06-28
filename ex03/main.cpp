@@ -6,8 +6,15 @@
 #include "./IMateriaSource.hpp"
 #include "./MateriaSource.hpp"
 
+void leak(void)
+{
+    system("leaks $PPID");
+}
+
 int main()
 {
+    atexit(leak);
+    
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());

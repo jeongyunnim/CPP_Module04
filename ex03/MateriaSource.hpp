@@ -1,6 +1,7 @@
 #pragma once
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
+#include "Floor.hpp"
 
 class MateriaSource : public IMateriaSource
 {
@@ -17,5 +18,6 @@ public:
 private:
 
 	AMateria*	sources[4];
-
+	Floor		floor;
+	
 };
