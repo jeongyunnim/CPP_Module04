@@ -18,14 +18,16 @@ Dog::~Dog(void)
 Dog& Dog::operator=(const Dog& rhs)
 {
 	_type = rhs._type;
-	brain = rhs.brain;
-    return (*this);
+	if (brain != NULL)
+		delete brain;
+	brain = new Brain(*rhs.brain);
+	return (*this);
 }
 
 Dog::Dog(const Dog& other)
 {
 	_type = other._type;
-	brain = new Brain(*(other.brain));
+	brain = new Brain(*other.brain);
 	std::cout << "Copy Constructor called. Dog generated." << std::endl;
 }
 

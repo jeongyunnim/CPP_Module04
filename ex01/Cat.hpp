@@ -16,6 +16,7 @@ public:
     void whereIsBrain(void) const;
 
 private:
+
     Brain   *brain;
 
 };

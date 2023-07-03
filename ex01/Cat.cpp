@@ -18,14 +18,16 @@ Cat::~Cat(void)
 Cat& Cat::operator=(const Cat& rhs)
 {
 	_type = rhs._type;
-	brain = rhs.brain;
+	if (brain != NULL)
+		delete brain;
+	brain = new Brain(*rhs.brain);
 	return (*this);
 }
 
 Cat::Cat(const Cat& other)
 {
 	_type = other._type;
-	brain = new Brain(*(other.brain));
+	brain = new Brain(*other.brain);
 	std::cout << "Copy constructor called. Cat generated." << std::endl;
 }
 

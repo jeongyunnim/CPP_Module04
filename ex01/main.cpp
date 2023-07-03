@@ -4,11 +4,17 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+void leak()
+{
+	system("leaks $PPID");
+}
+
 int main()
 {
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
+	atexit(leak);
 	delete j;//should not create a leak
 	delete i;
 
@@ -27,13 +33,13 @@ int main()
 		delete zoo[index];
 	}
 
-	Dog target;
-	const Dog* copyDog = new Dog(target);
+	Cat target;
+	Cat* copyCat = new Cat(target);
 
 	target.whereIsBrain();
-	copyDog->whereIsBrain();
+	copyCat->whereIsBrain();
 
-	delete copyDog;
+	delete copyCat;
 
-    return (0);
+	return (0);
 }
