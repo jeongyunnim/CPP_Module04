@@ -7,7 +7,7 @@ class AMateria
 {
 public:
 
-	const std::string& getType() const;
+	const std::string& getType(void) const;
 
 	AMateria(void);
 	virtual ~AMateria(void);
@@ -15,7 +15,7 @@ public:
 	AMateria(const AMateria& rhs);
 
 	AMateria(const std::string& type);
-	virtual AMateria* clone() const = 0;
+	virtual AMateria* clone(void) const = 0;
 	virtual void use(ICharacter& target);
 
 protected:
