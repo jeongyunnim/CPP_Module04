@@ -4,6 +4,7 @@
 
 class Animal
 {
+
 public:
 
 	Animal(void);
@@ -12,7 +13,7 @@ public:
 	Animal(const Animal& other);
 
 	virtual void	makeSound(void) const;
-	std::string		getType(void) const;
+	const std::string&		getType(void) const;
 
 protected:
 

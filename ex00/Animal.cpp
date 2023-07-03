@@ -29,7 +29,7 @@ void	Animal::makeSound(void) const
 	std::cout << "Animal Object can't make any sound." << std::endl;
 }
 
-std::string		Animal::getType(void) const
+const std::string&		Animal::getType(void) const
 {
 	return (_type);
 }
