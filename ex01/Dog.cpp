@@ -6,7 +6,7 @@ Dog::Dog(void)
 {
 	_type = "dog";
 	brain = new Brain();
-	std::cout << "Default Constructor called. Dog generated." << std::endl;
+	std::cout << "Default constructor called. Dog generated." << std::endl;
 }
 
 Dog::~Dog(void)

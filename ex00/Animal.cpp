@@ -8,7 +8,7 @@ Animal::Animal(void)
 
 Animal::~Animal(void)
 {
-	std::cout << "destructor called. Animal Class deleted." << std::endl;
+	std::cout << "Destructor called. Animal Class deleted." << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& rhs)

@@ -25,7 +25,7 @@ Brain::Brain(const Brain& other)
 	*this = other;
 }
 
-void	Brain::printIdeasAddress(void)
+void	Brain::printIdeasAddress(void) const
 {
 	std::cout << "Address: " << &ideas << std::endl;
 }

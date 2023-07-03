@@ -12,7 +12,7 @@ public:
 	Brain&	operator=(const Brain& rhs);
 	Brain(const Brain& other);
 	
-	void	printIdeasAddress(void);
+	void	printIdeasAddress(void) const;
 
 private:
 

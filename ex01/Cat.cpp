@@ -15,7 +15,7 @@ Cat::~Cat(void)
 	std::cout << "Destructor called. Cat deleted." << std::endl;
 }
 
-Cat& Cat::operator =(const Cat& rhs)
+Cat& Cat::operator=(const Cat& rhs)
 {
 	_type = rhs._type;
 	brain = rhs.brain;
@@ -26,7 +26,7 @@ Cat::Cat(const Cat& other)
 {
 	_type = other._type;
 	brain = new Brain(*(other.brain));
-	std::cout << "Copy Constructor called. Cat generated." << std::endl;
+	std::cout << "Copy constructor called. Cat generated." << std::endl;
 }
 
 void	Cat::makeSound(void) const

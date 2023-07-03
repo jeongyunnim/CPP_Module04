@@ -8,7 +8,7 @@ Animal::Animal(void)
 
 Animal::~Animal(void)
 {
-	std::cout << "destructor called. Animal Class deleted." << std::endl;
+	std::cout << "Destructor called. Animal Class deleted." << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& rhs)
@@ -23,13 +23,12 @@ Animal::Animal(const Animal& other)
 	std::cout << "Copy constructor called. Animal Class Generated." << std::endl;
 }
 
-
 void	Animal::makeSound(void) const
 {
-	std::cout << "Animal Object can't make any sound." << std::endl;
+	std::cout << "Animal object can't make any sound." << std::endl;
 }
 
-std::string		Animal::getType(void) const
+const std::string&		Animal::getType(void) const
 {
 	return (_type);
 }
