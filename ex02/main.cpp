@@ -4,7 +4,6 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-
 int main()
 {
 	const AAnimal* j = new Dog();
@@ -30,8 +29,11 @@ int main()
 	{
 		delete zoo[index];
 	}
-	const Dog target;
-	const Dog* copyDog = new Dog(target);
+
+	Dog target;
+	Dog* copyDog = new Dog(target);
+
+	target = *copyDog;
 
 	target.whereIsBrain();
 	copyDog->whereIsBrain();

@@ -2,7 +2,7 @@
 #include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : virtual public AAnimal
+class Dog : public AAnimal
 {
 
 public:

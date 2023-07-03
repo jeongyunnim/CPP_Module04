@@ -1,7 +1,7 @@
 #pragma once
 #include "WrongAnimal.hpp"
 
-class WrongCat : virtual public WrongAnimal
+class WrongCat : public WrongAnimal
 {
 
 public:

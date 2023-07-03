@@ -27,5 +27,5 @@ Brain::Brain(const Brain& other)
 
 void	Brain::printIdeasAddress(void) const
 {
-	std::cout << "Address: " << &ideas << std::endl;
+	std::cout << "Address: " << ideas << std::endl;
 }

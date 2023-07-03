@@ -15,10 +15,12 @@ Cat::~Cat(void)
 	std::cout << "Destructor called. Cat deleted." << std::endl;
 }
 
-Cat& Cat::operator =(const Cat& rhs)
+Cat& Cat::operator=(const Cat& rhs)
 {
 	_type = rhs._type;
-	brain = rhs.brain;
+	if (brain != NULL)
+		delete brain;
+	brain = new Brain(*rhs.brain);
 	return (*this);
 }
 
