@@ -70,6 +70,11 @@ void	Character::equip(AMateria* m)
 
 void	Character::unequip(int idx)
 {
+	if (idx < 0 || 3 < idx)
+	{
+		std::cerr << "invalid index." << std::endl;
+		return ;
+	}
 	if (inventory[idx] != NULL)
 	{
 		floor.addNode(inventory[idx]);
