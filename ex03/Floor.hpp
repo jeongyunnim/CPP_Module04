@@ -18,6 +18,7 @@ public:
 	Floor(const Floor& rhs);
 
 	void	addNode(AMateria *content);
+	void	printNode(void);
 	void	deleteAllNode(void);
 
 private:

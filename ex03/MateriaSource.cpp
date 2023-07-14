@@ -72,14 +72,21 @@ MateriaSource::MateriaSource(const MateriaSource& rhs)
 
 void	MateriaSource::learnMateria(AMateria* materia)
 {
+	if (materia == NULL)
+	{
+		std::cout << "[Warning] Can't learn NULL materia" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (sources[i] == NULL)
 		{
 			sources[i] = materia;
+			std::cout << '[' << sources[i]->getType() << "] successfully learned" << std::endl;
 			return ;
 		}
 	}
+	std::cout << "source slot is full " << '[' << materia->getType() << "] will be thrown to floor" << std::endl;
 	floor.addNode(materia);
 }
 
@@ -87,10 +94,11 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << sources[i]->getType() << std::endl;
+		if (sources[i] == NULL)
+			break ;
 		if (sources[i]->getType() == type)
 		{
-			std::cout << type << " successfully created" << std::endl;
+			std::cout << '[' << type << "] successfully created" << std::endl;
 			return (sources[i]->clone());
 		}
 	}

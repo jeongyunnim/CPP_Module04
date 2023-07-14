@@ -57,29 +57,39 @@ void	Character::equip(AMateria* m)
 {
 	int	i;
 
+	if (m == NULL)
+		return ;
 	for (i = 0; i < 4; i++)
 	{
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
+			std::cout << _name << " equip the [" << inventory[i]->getType() << "]" << std::endl;
+			return ;
+		}
+		else if (inventory[i] == m)
+		{
+			std::cout << "[Warning] Do not try equip duplicated Materia!" << std::endl;
 			return ;
 		}
 	}
+	std::cout << "inventory slot is full " << '[' << m->getType() << "] will be thrown to floor" << std::endl;
 	floor.addNode(m);
 }
 
 void	Character::unequip(int idx)
 {
-	if (idx < 0 || 3 < idx)
+	if (idx < 0 || idx > 3)
 	{
-		std::cerr << "invalid index." << std::endl;
+		std::cout << "[Error] Out of inventory range.." << std::endl;
 		return ;
 	}
+	std::cout << "\n\nunequip\n\n" << std::endl;
 	if (inventory[idx] != NULL)
 	{
-		floor.addNode(inventory[idx]);
+		floor.addNode(inventory[idx]); 
+		std::cout << _name << " unequip the " << inventory[idx]->getType() << std::endl;
 		inventory[idx] = NULL;
-		std::cout << _name << " unequip the materia" << std::endl;
 	}
 	for (int i = idx + 1; i < 4; i++)
 	{
@@ -93,8 +103,13 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << "[Error] Out of inventory range.." << std::endl;
+		return ;
+	}
 	if (inventory[idx] == NULL)
-		std::cout << "Nothing happened..." << std::endl;
+		std::cout << "There is empty slot..." << std::endl;
 	else
 		inventory[idx]->use(target);
 }
