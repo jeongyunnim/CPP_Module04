@@ -84,7 +84,6 @@ void	Character::unequip(int idx)
 		std::cout << "[Error] Out of inventory range.." << std::endl;
 		return ;
 	}
-	std::cout << "\n\nunequip\n\n" << std::endl;
 	if (inventory[idx] != NULL)
 	{
 		floor.addNode(inventory[idx]); 

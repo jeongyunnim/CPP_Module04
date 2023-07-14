@@ -110,8 +110,18 @@ int main()
 
 	interactiveTest(*me, *skillBook);
 
+	me->unequip(0);
+	me->unequip(0);
+	me->unequip(0);
+	me->unequip(0);
+	me->equip(skillBook->createMateria("ice"));
+	me->equip(skillBook->createMateria("cure"));
+	me->equip(skillBook->createMateria("ice"));
+	me->equip(skillBook->createMateria("cure"));
 	me->use(0, *monster);
 	me->use(1, *monster);
+	me->use(2, *monster);
+	me->use(3, *monster);
 
 	delete monster;
 	delete me;
